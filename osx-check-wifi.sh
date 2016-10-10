@@ -26,8 +26,12 @@ pingtest () {
 
 netstatus () {
     echo
-    echo "--- airport info ---"
+    echo "=== airport info ==="
     /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+    echo "--- scan ---"
+    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+    echo "--- prefs ---"
+    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport prefs
 }
 
 netcheck () {
