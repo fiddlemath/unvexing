@@ -32,7 +32,8 @@ netstatus () {
 
 netcheck () {
     echo
-    echo "=== $(date +'%F %T') ==="    
+    echo "=== $(date +'%F %T') ==="
+    echo "$*"
     netstatus
     pingtest google.com
     pingtest confluence.leverageresearch.org
