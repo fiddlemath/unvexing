@@ -10,6 +10,13 @@
 
 LOGFILE=~/Desktop/net-report.txt
 
+iperf () {
+    echo
+    echo "--- performance ---"
+    iperf3 -c 10.1.10.204
+    iperf3 -c 10.1.10.204 -u -b 4M
+}    
+
 speedtest () {
     echo
     echo "--- speedtest ---"
@@ -39,9 +46,9 @@ netcheck () {
     echo "=== $(date +'%F %T') ==="
     echo "$*"
     netstatus
+    pingtest 10.1.10.204
     pingtest google.com
-    pingtest confluence.leverageresearch.org
-    speedtest
+    iperf
     echo
     echo
 }
